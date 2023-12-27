@@ -75,6 +75,8 @@ public class PrimeFactors {
 
 	public static void main(String[] args) {
 		getPrimeFactors(12);
+		System.out.println();
+		primeFactorsEf2(450);
 	}
 
 }

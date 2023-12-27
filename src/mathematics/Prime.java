@@ -11,7 +11,7 @@ public class Prime {
 	/*- Divisors always appear in pairs
 	 * T(n): O(n^1/2)
 	 */
-	static boolean isPrime(int n) {
+	public static boolean isPrime(int n) {
 		if (n == 1)
 			return false;
 		for (int i = 2; i <= Math.sqrt(n); i++) {

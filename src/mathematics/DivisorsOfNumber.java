@@ -46,7 +46,7 @@ public class DivisorsOfNumber {
 	public static void main(String[] args) {
 		printDivisors(7);
 		System.out.println();
-		divisorsWithOrder(15);
+		divisorsWithOrder(182);
 	}
 
 }
