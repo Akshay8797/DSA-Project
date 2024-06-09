@@ -3,7 +3,7 @@ package arrays;
 public class MaximumCircularSubArraySum {
 
 	public static void main(String[] args) {
-		int[] arr = { -5, -2, -3, -4 };
+		int[] arr = { 5, -2, 3, 4, -1, 8 };
 		System.out.println(getMaxCircularSubArrayEff(arr));
 	}
 
