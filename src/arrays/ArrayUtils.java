@@ -32,4 +32,12 @@ public class ArrayUtils {
 		}
 	}
 
+	protected static int getArraySumFromToIndex(int[] arr, int j, int k) {
+		int sum = 0;
+		for (int i = j; i < k; i++) {
+			sum += arr[i];
+		}
+		return sum;
+	}
+
 }
