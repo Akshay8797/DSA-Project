@@ -11,6 +11,7 @@ public class BinarySearch {
 		System.out.println(binarySearchRec(0, arr.length - 1, arr, 40));
 	}
 
+	// T(n): O(log n)
 	private static int binarySearchIndex(int[] arr, int elem) {
 		int n = arr.length, low = 0, high = n - 1;
 		while (low <= high) {
@@ -25,6 +26,7 @@ public class BinarySearch {
 		return -1;
 	}
 
+	// T(n): O(log n), S(n): O(log n)
 	private static int binarySearchRec(int low, int high, int[] arr, int elem) {
 		if (low > high)
 			return -1;
