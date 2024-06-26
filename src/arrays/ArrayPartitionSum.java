@@ -1,5 +1,7 @@
 package arrays;
 
+import utils.ArrayUtils;
+
 /*- Given an array, check if it can be partitioned into 3 parts with equal sum.
  * `I/P: [5,2,6,1,1,1,1,4]	=>	O/P: True (5+2 = 6+1 = 1+1+1+1+4).
  */

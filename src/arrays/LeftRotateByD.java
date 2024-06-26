@@ -2,6 +2,8 @@ package arrays;
 
 import java.util.Arrays;
 
+import utils.ArrayUtils;
+
 /*- Left rotate an array (counter clockwise) by D
  * 	I/P: arr[] = {1, 2, 3, 4, 5}, d=2.
  *	O/P: {3, 4, 5, 1, 2} 

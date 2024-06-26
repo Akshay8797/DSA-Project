@@ -2,6 +2,8 @@ package arrays;
 
 import java.util.Arrays;
 
+import utils.ArrayUtils;
+
 // Move all the zeroes in the array to the end maintaining the order.
 public class MoveAllZeroesToEnd {
 

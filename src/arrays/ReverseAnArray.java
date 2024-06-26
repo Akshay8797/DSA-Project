@@ -2,6 +2,8 @@ package arrays;
 
 import java.util.Arrays;
 
+import utils.ArrayUtils;
+
 public class ReverseAnArray {
 
 	public static void main(String[] args) {

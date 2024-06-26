@@ -1,5 +1,7 @@
 package arrays;
 
+import utils.ArrayUtils;
+
 public class WindowSliding {
 
 	public static void main(String[] args) {

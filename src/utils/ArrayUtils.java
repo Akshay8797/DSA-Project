@@ -1,14 +1,14 @@
-package arrays;
+package utils;
 
 public class ArrayUtils {
 
-	protected static void swap(int[] arr, int i, int j) {
+	public static void swap(int[] arr, int i, int j) {
 		int temp = arr[i];
 		arr[i] = arr[j];
 		arr[j] = temp;
 	}
 
-	protected static void reverse(int[] arr, int low, int high) {
+	public static void reverse(int[] arr, int low, int high) {
 		while (low < high) {
 			swap(arr, low, high);
 			low++;
@@ -16,11 +16,11 @@ public class ArrayUtils {
 		}
 	}
 
-	protected static boolean isEven(int a) {
+	public static boolean isEven(int a) {
 		return (a % 2 == 0);
 	}
 
-	protected static void loopAndPrintFlips(int[] arr, int index, int val) {
+	public static void loopAndPrintFlips(int[] arr, int index, int val) {
 		while (index < arr.length) {
 			if (arr[index] == val) {
 				System.out.print("From " + index);
@@ -32,7 +32,7 @@ public class ArrayUtils {
 		}
 	}
 
-	protected static int getArraySumFromToIndex(int[] arr, int j, int k) {
+	public static int getArraySumFromToIndex(int[] arr, int j, int k) {
 		int sum = 0;
 		for (int i = j; i < k; i++) {
 			sum += arr[i];

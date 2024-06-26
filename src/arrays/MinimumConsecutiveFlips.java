@@ -1,5 +1,7 @@
 package arrays;
 
+import utils.ArrayUtils;
+
 /*- Given a boolean array. Find the minimum flips to make the array elements same.
  * 	Allowed either flip of 0's or 1's. Consecutive 0's or 1's can be flipped in one go.
  * 	I/P: arr[] = {1,1,0,0,0,1} => O/P: From 2 to 4 (1 Flip).
