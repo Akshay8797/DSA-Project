@@ -26,7 +26,8 @@ public class RepeatingElement {
 	}
 
 	/*-	Use array elements as indexes to form a chain. 
-	 * +1's are added to avoid infinite loops with 0. -1 is done to get proper result.
+	 * 	+1's are added to avoid self or unnecessary loops with 0 being in the array, giving wrong result.
+	 *  -1 is done to get the original result back.
 	 * 	T(n): O(n), S(n): O(1)
 	 */
 	private static int getRepeatingElementEff(int[] arr) {
