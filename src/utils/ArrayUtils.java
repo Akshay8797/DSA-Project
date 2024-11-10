@@ -34,9 +34,15 @@ public class ArrayUtils {
 
 	public static int getArraySumFromToIndex(int[] arr, int j, int k) {
 		int sum = 0;
-		for (int i = j; i < k; i++) {
+		for (int i = j; i < k; i++)
 			sum += arr[i];
-		}
+		return sum;
+	}
+
+	public static int getArraySumIncl(int[] arr, int b, int e) {
+		int sum = 0;
+		for (int i = b; i <= e; i++)
+			sum += arr[i];
 		return sum;
 	}
 
