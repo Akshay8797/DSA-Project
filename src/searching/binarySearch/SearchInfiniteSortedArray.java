@@ -25,7 +25,7 @@ public class SearchInfiniteSortedArray {
 		}
 	}
 
-	// T(n): O(log (position))	[Unbounded Binary Search]
+	// T(n): O(log (position)) [Unbounded Binary Search]
 	private static int searchInfiniteArrayEff(int[] arr, int x) {
 		if (arr[0] == 0)
 			return 0;
