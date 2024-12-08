@@ -45,5 +45,13 @@ public class ArrayUtils {
 			sum += arr[i];
 		return sum;
 	}
+	
+	public static void printFromIndexWithoutDup(int[] arr, int i, int n) {
+		while (i < n) {
+			if (i == 0 || arr[i] != arr[i - 1])
+				System.out.println(arr[i]);
+			i++;
+		}
+	}
 
 }
