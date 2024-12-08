@@ -1,0 +1,27 @@
+1. Binary Array Or Array with three values: 
+	- Partition algorithm of Quick sort (Lomuto, Hoare's, and Naive).
+	- T(n): O(n)
+2. Array of size n and small ranged values: 
+	- Counting sort.
+	- T(n): O(n+k), where k is the range (difference between maximum and minimum + 1).
+	- T(n) is O(n) under the assumption that all the values are in a small range.
+3. Array of size n and range is of size n^2 or n^3 or closer: 
+	- Radix sort.
+	- T(n): O(n*d), where d is no. of digits in the largest no.
+	- T(n) is O(n) under the assumption of a higher range.
+4. Array of uniformly distributed data over a range: 
+	- Bucket sort.
+	- T(n): O(n+k), where k is the no. of buckets used to divide the input array.
+	- T(n) is O(n) under the assumption that elements are uniformly distributed.
+5. When memory writes are costly: 
+	- Selection sort and Cycle sort.
+	- T(n): O(n^2) for both. But Cycle sort is optimal in terms of memory writes.
+6. When adjacent swaps are allowed: 
+	- Bubble Sort and Cocktail Sort (Bidirectional bubble sort).
+	- T(n): O(n^2).
+7. When array size is small: 
+	- Selection sort and Insertion sort. 
+	- T(n): O(n^2) for both. But Insertion sort works best for small no. of elements.
+8. When available extra memory is small: 
+	- Shell sort (In-place sorting algorithm).
+	- T(n): O(n*(log n)^2) [Using Pratt's sequence].
