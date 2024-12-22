@@ -53,5 +53,9 @@ public class ArrayUtils {
 			i++;
 		}
 	}
+	
+	public static boolean isArrayValid(int[] arr) {
+	    return arr != null && arr.length > 0;
+	}
 
 }
