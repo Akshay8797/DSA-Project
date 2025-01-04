@@ -45,7 +45,7 @@ public class ArrayUtils {
 			sum += arr[i];
 		return sum;
 	}
-	
+
 	public static void printFromIndexWithoutDup(int[] arr, int i, int n) {
 		while (i < n) {
 			if (i == 0 || arr[i] != arr[i - 1])
@@ -53,9 +53,19 @@ public class ArrayUtils {
 			i++;
 		}
 	}
-	
+
 	public static boolean isArrayValid(int[] arr) {
-	    return arr != null && arr.length > 0;
+		return arr != null && arr.length > 0;
+	}
+
+	public static void swap(int[][] arr, int row1, int col1, int row2, int col2) {
+		int temp = arr[row1][col1];
+		arr[row1][col1] = arr[row2][col2];
+		arr[row2][col2] = temp;
+	}
+	
+	public static void print(int[][] arr, int row, int col) {
+		System.out.print(arr[row][col] + " ");
 	}
 
 }
