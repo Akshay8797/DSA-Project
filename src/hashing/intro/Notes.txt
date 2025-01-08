@@ -1,0 +1,24 @@
+Advantages:
+	- Search, Insert and Delete in O(1). 
+	- No duplicates allowed.
+Disadvantages:
+	- Finding closest value and sorted order (AVL tree, Red-black tree, or other self-balancing BSTs are better).
+	- Prefix searching (Trie is better).
+Applications:
+	- Dictionaries.
+	- Database indexing and fetching (Associative arrays in JDBC).
+	- Cryptography.
+	- Caching.
+	- Symbol table in Compilers or Interpreters.
+	
+Hash collision handling:
+	- Chaining.
+	- Open Addressing: Linear probing, Quadratic probing, Double hashing.
+Chaining:
+	- Maintain an array of Linked Lists.
+	- Data Structures used: Linked List, Dynamic Sized Arrays, and Self Balancing BSTs (Red-Black Tree, AVL Tree).
+Open Addressing:
+	- Using single array with no chains and hence Cache friendly.
+	- No. of slots in the hash table >= No. of keys to be inserted.
+	- Linear Probing: Linearly search (Circularly) the next empty slot in the hash table if the current one is filled.
+	- Double Hashing: Uses two hash functions, so distributes keys more uniformly than linear and quadratic probing.
