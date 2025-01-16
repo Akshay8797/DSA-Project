@@ -7,11 +7,15 @@ import java.util.Map;
 public class LongestSubarrayEqual01s {
 
 	public static void main(String[] args) {
-		int[] arr = { 1, 0, 1, 1, 1, 0, 0 }; // O/P: 6
+		int[] arr = { 1, 0, 1, 1, 1, 0, 0 }; // O/p: 6
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == 0)
 				arr[i] = -1;
 		}
+		System.out.println(getLongestSubarrWith0Sum(arr));
+	}
+	
+	static int getLongestSubarrWith0Sum(int[] arr) {
 		Map<Integer, Integer> sumLen = new HashMap<>();
 		int preSum = 0, maxLen = 0;
 		for (int i = 0; i < arr.length; i++) {
@@ -24,7 +28,7 @@ public class LongestSubarrayEqual01s {
 			else
 				sumLen.put(preSum, i);
 		}
-		System.out.println(maxLen);
+		return maxLen;
 	}
 	
 }
