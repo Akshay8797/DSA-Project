@@ -8,7 +8,6 @@ import java.util.Map;
  * 	No. of windows = n-k+1
  * 	I/p: [10, 20, 20, 10, 30, 40, 10], k: 4  =>  O/p: 2, 3, 4, 3
  */
-
 public class CountDistinctInWindow {
 
 	public static void main(String[] args) {
