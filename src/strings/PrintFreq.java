@@ -6,10 +6,12 @@ package strings;
  */
 public class PrintFreq {
 
+	static final int LOWER_CASE_WORDS = 26;
+
 	// T(n): O(n)
 	public static void main(String[] args) {
 		String str = "geeksforgeeks";
-		int[] count = new int[26];
+		int[] count = new int[LOWER_CASE_WORDS];
 		for (int i = 0; i < str.length(); i++) {
 			count[str.charAt(i) - 'a']++;
 		}
