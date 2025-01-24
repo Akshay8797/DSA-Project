@@ -1,5 +1,7 @@
 package strings;
 
+import utils.Constants;
+
 /*- Given 2 strings, find if they are Anagram.
  * 	Anagram are two strings which are permutations of each other. 
  */
@@ -16,7 +18,7 @@ public class Anagrams {
 			return false;
 		s1 = s1.toLowerCase();
 		s2 = s2.toLowerCase();
-		int[] freq = new int[PrintFreq.LOWER_CASE_WORDS];
+		int[] freq = new int[Constants.SMALL_WORDS];
 		for (int i = 0; i < s1.length(); i++) {
 			freq[s1.charAt(i) - 'a']++;
 			freq[s2.charAt(i) - 'a']--;
