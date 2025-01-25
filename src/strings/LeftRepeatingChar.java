@@ -2,12 +2,7 @@ package strings;
 
 import utils.Constants;
 
-// Given a String find the index of the left-most repeating character.
-
-/*- ASCII values: 
- * 	0-9: 48-57, A-Z: 65-90, a-z: 97-122 
- * 	Given a string of lower case characters. Print the frequencies in sorted order of characters.
- */
+// Given a String, find the index of the left-most repeating character.
 public class LeftRepeatingChar {
 
 	public static void main(String[] args) {
