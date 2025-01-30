@@ -1,6 +1,9 @@
 package strings;
 
-// Given a String as a character array, reverse the order of words in the String in-place.
+/*- Given a String as a character array, reverse the order of words in the String in-place.
+ * 	Assuming all words are separated by a single space with no beginning and ending spaces.
+ * 	If the string has only one word the output should be same.
+ */
 public class ReverseWords {
 
 	public static void main(String[] args) {
