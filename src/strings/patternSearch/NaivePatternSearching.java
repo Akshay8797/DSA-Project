@@ -5,14 +5,10 @@ package strings.patternSearch;
  */
 public class NaivePatternSearching {
 
-	// Z algorithm is also efficient as KMP algorithm but simpler.
+	// T(n): O((m-n)*n)
 	public static void main(String[] args) {
 		String txt = "ABABABCD", pat = "ABAB";
-		getPatternIndex(txt, pat);
-	}
 
-	// T(n): O((m-n)*n)
-	static void getPatternIndex(String txt, String pat) {
 		int m = txt.length(), n = pat.length(), j;
 		for (int i = 0; i <= m - n; i++) {
 			for (j = 0; j < n; j++) {
