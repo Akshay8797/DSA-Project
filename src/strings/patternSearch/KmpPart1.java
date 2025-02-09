@@ -2,7 +2,7 @@ package strings.patternSearch;
 
 import java.util.Arrays;
 
-/*- Given a string, str. Construct Longest Proper Prefix Suffix (LPS) array for str.
+/*- Given a string, create LPS array. LPS: Longest Proper Prefix which is also a Suffix.
  *  Used as a pre-processing in KMP algorithm.
  *  For string "abc", Proper prefixes are "", "a", "ab" and the suffixes are "", "c", "bc", "abc".
  *  Ex: str = "abacab", LPS[] = [0, 0, 1, 0, 1, 2, 3, 0].
@@ -29,6 +29,7 @@ public class KmpPart1 {
 					lps[i] = 0;
 					i++;
 				} else
+					// if lps[i-1] cannot be extended, try lps[len-1].
 					len = lps[len - 1];
 			}
 		}
