@@ -10,25 +10,25 @@ public class RabinKarbPatternSrch {
 		doRabinKarpSearch(txt, pat);
 	}
 
-	// T(n): O((m-n)*n) - when pat is present at all the pos, but works better generally.
+	// T(n): O((n-m)*m) - when pat is present at all the pos, but works better generally.
 	private static void doRabinKarpSearch(String txt, String pat) {
-		int h = 1, m = txt.length(), n = pat.length();
+		int h = 1, m = pat.length(), n = txt.length();
 		// (d^(n-1)) % q - computation for next hash calculation.
-		for (int i = 0; i < n - 1; i++)
+		for (int i = 0; i < m - 1; i++)
 			h = (h * d) % q;
 
 		int p = 0, t = 0;
 		// Initial pattern and text window hash computation.
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < m; i++) {
 			p = (p * d + pat.charAt(i)) % q;
 			t = (t * d + txt.charAt(i)) % q;
 		}
 
-		for (int i = 0; i <= m - n; i++) {
+		for (int i = 0; i <= n - m; i++) {
 			if (p == t) {
 				// Check for spurious hit.
 				boolean flag = true;
-				for (int j = 0; j < n; j++) {
+				for (int j = 0; j < m; j++) {
 					if (txt.charAt(i + j) != pat.charAt(j)) {
 						flag = false;
 						break;
@@ -37,9 +37,9 @@ public class RabinKarbPatternSrch {
 				if (flag)
 					System.out.print(i + " ");
 			}
-			if (i < m - n) {
+			if (i < n - m) {
 				// Next hash value for the text window.
-				t = (d * (t - txt.charAt(i) * h) + txt.charAt(i + n)) % q;
+				t = (d * (t - txt.charAt(i) * h) + txt.charAt(i + m)) % q;
 				if (t < 0)
 					t = t + q; // (-t % q) = (t + q)
 			}

@@ -7,13 +7,13 @@ public class NaivePatternSrchDistinct {
 	public static void main(String[] args) {
 		String txt = "ABCABCDABCD", pat = "ABCD";
 
-		int m = txt.length(), n = pat.length(), j, i = 0;
-		while (i <= m - n) {
-			for (j = 0; j < n; j++) {
+		int m = pat.length(), n = txt.length(), j, i = 0;
+		while (i <= n - m) {
+			for (j = 0; j < m; j++) {
 				if (txt.charAt(i + j) != pat.charAt(j))
 					break;
 			}
-			if (j == n)
+			if (j == m)
 				System.out.print(i + " ");
 			if (j == 0)
 				i++;

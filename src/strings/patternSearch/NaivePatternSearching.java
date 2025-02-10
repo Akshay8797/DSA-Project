@@ -5,17 +5,17 @@ package strings.patternSearch;
  */
 public class NaivePatternSearching {
 
-	// T(n): O((m-n)*n)
+	// T(n): O((n-m)*m).
 	public static void main(String[] args) {
 		String txt = "ABABABCD", pat = "ABAB";
 
-		int m = txt.length(), n = pat.length(), j;
-		for (int i = 0; i <= m - n; i++) {
-			for (j = 0; j < n; j++) {
+		int m = pat.length(), n = txt.length(), j;
+		for (int i = 0; i <= n - m; i++) {
+			for (j = 0; j < m; j++) {
 				if (txt.charAt(i + j) != pat.charAt(j))
 					break;
 			}
-			if (j == n)
+			if (j == m)
 				System.out.print(i + " ");
 		}
 	}
