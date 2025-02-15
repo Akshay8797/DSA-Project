@@ -8,4 +8,7 @@ public class Constants {
 	// A-Z: 65-90, a-z: 97-122
 	public static final int ALL_WORDS = 58;
 
+	// All Ascii values
+	public static final int ALL_CHARS = 128;
+
 }

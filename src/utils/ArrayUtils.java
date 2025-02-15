@@ -63,9 +63,15 @@ public class ArrayUtils {
 		arr[row1][col1] = arr[row2][col2];
 		arr[row2][col2] = temp;
 	}
-	
+
 	public static void print(int[][] arr, int row, int col) {
 		System.out.print(arr[row][col] + " ");
+	}
+
+	public static void swapChar(char[] chars, int i, int j) {
+		char temp = chars[i];
+		chars[i] = chars[j];
+		chars[j] = temp;
 	}
 
 }
