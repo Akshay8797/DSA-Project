@@ -7,7 +7,7 @@ package mathematics;
 public class Factorial {
 
 	// T(n): O(n); S(n): O(1).
-	static int fact(int n) {
+	public static int fact(int n) {
 		int res = 1;
 		for (int i = 2; i <= n; i++)
 			res = res * i;
