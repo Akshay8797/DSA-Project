@@ -1,6 +1,6 @@
 package linkedList.singleLinkedList;
 
-//self referential structure
+// Self referential structure
 public class Node {
 
 	int data;

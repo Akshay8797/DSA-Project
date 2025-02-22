@@ -2,6 +2,15 @@ package linkedList.singleLinkedList;
 
 public class LinkedList {
 
+	static int search(Node head, int x) {
+		for (int i = 1; head != null; i++) {
+			if (head.data == x)
+				return i;
+			head = head.next;
+		}
+		return -1;
+	}
+
 	static Node deleteLast(Node head) {
 		if (head == null || head.next == null)
 			return null;

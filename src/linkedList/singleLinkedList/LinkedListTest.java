@@ -19,6 +19,8 @@ public class LinkedListTest {
 		System.out.println("After deleteFirst : " + LinkedList.printList(head));
 		head = LinkedList.deleteLast(head);
 		System.out.println("After deleteLast : " + LinkedList.printList(head));
+		int idx = LinkedList.search(head, 30);
+		System.out.println("Search idx : " + idx);
 	}
 
 }
