@@ -59,7 +59,7 @@ public class SingleLinkedList {
 		return node;
 	}
 
-	static void printList(String msg, Node head) {
+	public static void printList(String msg, Node head) {
 		System.out.print(msg + " ");
 		if (head == null)
 			return;
