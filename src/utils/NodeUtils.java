@@ -16,15 +16,15 @@ public class NodeUtils {
 		return head;
 	}
 
-	public static Node nullHeadInsert(Node head, Node node) {
+	public static Node nullHeadInsert(Node node) {
 		node.next = node;
 		return node;
 	}
 
-	public static void swapNodeData(Node head, Node node) {
-		int temp = head.data;
-		head.data = node.data;
-		node.data = temp;
+	public static void swapNodeData(Node node1, Node node2) {
+		int temp = node1.data;
+		node1.data = node2.data;
+		node2.data = temp;
 	}
 
 }
