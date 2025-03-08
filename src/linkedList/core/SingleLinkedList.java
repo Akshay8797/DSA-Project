@@ -61,8 +61,10 @@ public class SingleLinkedList {
 
 	public static void printList(String msg, Node head) {
 		System.out.print(msg + " ");
-		if (head == null)
+		if (head == null) {
+			System.out.println("Null");
 			return;
+		}
 		for (Node n = head; n != null; n = n.next)
 			System.out.print(n.data + " ");
 		System.out.println();

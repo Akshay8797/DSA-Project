@@ -49,7 +49,7 @@ public class CircularLinkedList {
 	static Node insertAtEndEff(Node head, int x) {
 		Node node = new Node(x);
 		if (head == null)
-			return NodeUtils.nullHeadInsert(head, node);
+			return NodeUtils.nullHeadInsert(node);
 		node.next = head.next; // insert node after the head.
 		head.next = node;
 		NodeUtils.swapNodeData(head, node);
@@ -60,7 +60,7 @@ public class CircularLinkedList {
 	static Node insertAtEnd(Node head, int x) {
 		Node node = new Node(x);
 		if (head == null)
-			return NodeUtils.nullHeadInsert(head, node);
+			return NodeUtils.nullHeadInsert(node);
 		Node curr = head;
 		while (curr.next != head)
 			curr = curr.next;
@@ -73,7 +73,7 @@ public class CircularLinkedList {
 	static Node insertAtBeginEff(Node head, int x) {
 		Node node = new Node(x);
 		if (head == null)
-			return NodeUtils.nullHeadInsert(head, node);
+			return NodeUtils.nullHeadInsert(node);
 		node.next = head.next; // insert node after the head.
 		head.next = node;
 		NodeUtils.swapNodeData(head, node);
@@ -84,7 +84,7 @@ public class CircularLinkedList {
 	static Node insertAtBegin(Node head, int x) {
 		Node node = new Node(x);
 		if (head == null)
-			return NodeUtils.nullHeadInsert(head, node);
+			return NodeUtils.nullHeadInsert(node);
 		Node curr = head;
 		while (curr.next != head)
 			curr = curr.next;
