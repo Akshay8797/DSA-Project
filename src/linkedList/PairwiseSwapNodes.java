@@ -12,7 +12,7 @@ public class PairwiseSwapNodes {
 	public static void main(String[] args) {
 		Node head = NodeUtils.createSingleLinkedList(1, 2, 3, 4, 5);
 		SingleLinkedList.printList("Initial list:", head);
-		swapPairwise(head);
+		head = swapPairwiseNodes(head);
 		SingleLinkedList.printList("Post swapPairwise:", head);
 	}
 
