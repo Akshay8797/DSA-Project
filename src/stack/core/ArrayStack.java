@@ -1,11 +1,12 @@
 package stack.core;
 
+import utils.StackUtils;
+
 public class ArrayStack {
 
 	private static class Stack {
-		int top = -1;
-		int cap;
-		Integer[] arr;
+		private int cap, top = -1;
+		private Integer[] arr;
 
 		public Stack(int cap) {
 			this.cap = cap;
@@ -14,7 +15,7 @@ public class ArrayStack {
 
 		void push(int x) {
 			if (top == cap - 1) {
-				System.out.println("Push failed - Stack is full!");
+				StackUtils.stackFullError(x);
 				return;
 			}
 			top++;
@@ -22,28 +23,24 @@ public class ArrayStack {
 		}
 
 		Integer pop() {
-			if (top == -1) {
-				System.out.println("Pop failed - Stack is empty!");
-				return null;
-			}
+			if (top == -1)
+				return StackUtils.stackEmptyError("Pop");
 			int res = arr[top];
 			top--;
 			return res;
 		}
 
 		Integer peek() {
-			if (top == -1) {
-				System.out.println("Peek failed - Stack is empty!");
-				return null;
-			}
-			return arr[top - 1];
+			if (top == -1)
+				return StackUtils.stackEmptyError("Peek");
+			return arr[top];
 		}
 
 		Integer size() {
 			return top + 1;
 		}
 
-		Boolean isEmpty() {
+		boolean isEmpty() {
 			return top == -1;
 		}
 	}
@@ -53,6 +50,7 @@ public class ArrayStack {
 		stack.push(5);
 		stack.push(15);
 		stack.push(25);
+		stack.push(35);
 		System.out.println(stack.peek());
 		System.out.println(stack.pop());
 		stack.push(35);
