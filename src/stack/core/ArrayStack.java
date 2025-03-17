@@ -8,7 +8,7 @@ public class ArrayStack {
 		private int cap, top = -1;
 		private Integer[] arr;
 
-		public Stack(int cap) {
+		Stack(int cap) {
 			this.cap = cap;
 			arr = new Integer[cap];
 		}
