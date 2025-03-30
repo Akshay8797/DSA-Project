@@ -19,7 +19,7 @@ public class StockSpan {
 
 	/*- Span = Current index - Index of closest greater element on the left.
 	 *		If no greater element: Span = curr index + 1.
-	 * 	T(n): O(n) {Every item is pushed into the stack once and popped at-most once} , S(n): O(n).
+	 * 	T(n): O(n) {Each item is pushed into the stack once and popped at-most once} , S(n): O(n).
 	 */
 	private static void printSpans(int[] arr) {
 		if (arr.length == 0)
