@@ -4,20 +4,21 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Map;
 
-// Given an Infix expression, convert it to postfix expression.
+// Given an Infix expression containing alphabets and operators, convert it to Postfix expression.
 public class InfixToPostfix {
 
 	private static class Conversion {
 		private Deque<Character> stack;
-		private StringBuilder res = new StringBuilder();
+		private StringBuilder res;
 		private Map<Character, Integer> precedence = Map.of('+', 1, '-', 1, '*', 2, '/', 2, '^', 3);
 
 		Conversion(int cap) {
-			stack = new ArrayDeque<>(cap); // stores the operators and '('.
+			stack = new ArrayDeque<>(cap); // Stores the operators and '('.
+			res = new StringBuilder();
 		}
 
 		public boolean isOperand(char ch) {
-			return Character.isLetterOrDigit(ch);
+			return Character.isLetter(ch);
 		}
 
 		public boolean notGreater(char ch) {
@@ -57,11 +58,13 @@ public class InfixToPostfix {
 						res.append(stack.pop());
 					}
 					stack.push(ch);
-				} else
-					return "Invalid expression: Invalid operator!";
+				}
 			}
 			// Pop operators from the stack and append to output after the exp is traversed.
 			while (!stack.isEmpty()) {
+				if (stack.peek() == ')' || stack.peek() == '(') {
+					return "Invalid expression: Mismatched parentheses!";
+				}
 				res.append(stack.pop());
 			}
 			return res.toString();
