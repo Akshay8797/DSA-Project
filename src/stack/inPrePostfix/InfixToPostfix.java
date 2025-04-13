@@ -14,11 +14,7 @@ public class InfixToPostfix {
 
 		Conversion(int cap) {
 			stack = new ArrayDeque<>(cap); // Stores the operators and '('.
-			res = new StringBuilder();
-		}
-
-		public boolean isOperand(char ch) {
-			return Character.isLetter(ch);
+			res = new StringBuilder(cap);
 		}
 
 		public boolean notGreater(char ch) {
@@ -39,12 +35,11 @@ public class InfixToPostfix {
 		public String infixToPostfix(String exp) {
 			for (int i = 0; i < exp.length(); i++) {
 				char ch = exp.charAt(i);
-				if (isOperand(ch)) {
-					res.append(ch); // If ch is an operand, append it to the output.
-				} else if (ch == '(') {
-					stack.push(ch); // If ch is '(', push to the stack.
-				}
-				// If the character is ')', pop and append to output until '(' is encountered.
+				if (Character.isLetter(ch)) // If operand, append to output.
+					res.append(ch);
+				else if (ch == '(')
+					stack.push(ch); // If '(', push to the stack.
+				// If ')', pop and append to output until '(' is encountered.
 				else if (ch == ')') {
 					while (!stack.isEmpty() && stack.peek() != '(') {
 						res.append(stack.pop());
@@ -53,14 +48,16 @@ public class InfixToPostfix {
 						return "Invalid expression: Mismatched parentheses!";
 					}
 					stack.pop(); // Pop the '('.
-				} else if (precedence.containsKey(ch)) { // If ch is an operator.
+				}
+				// If operator, pop lower precedence operators and then push.
+				else if (precedence.containsKey(ch)) {
 					while (!stack.isEmpty() && notGreater(ch)) {
 						res.append(stack.pop());
 					}
 					stack.push(ch);
 				}
 			}
-			// Pop operators from the stack and append to output after the exp is traversed.
+			// Pop operators from stack and append to output after the expression is traversed.
 			while (!stack.isEmpty()) {
 				if (stack.peek() == ')' || stack.peek() == '(') {
 					return "Invalid expression: Mismatched parentheses!";
@@ -76,4 +73,5 @@ public class InfixToPostfix {
 		Conversion conversion = new Conversion(exp.length());
 		System.out.println(conversion.infixToPostfix(exp));
 	}
+
 }
