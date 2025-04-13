@@ -32,4 +32,18 @@ public class MathUtils {
 		}
 		return (reqStud <= k);
 	}
+
+	public static int calculateExpr(int a, int b, String operator) {
+		if (operator == "/" && b == 0)
+			throw new ArithmeticException("Division by zero!");
+		return switch (operator) {
+		case "+" -> a + b;
+		case "-" -> a - b;
+		case "*" -> a * b;
+		case "/" -> a / b;
+		case "^" -> (int) Math.round(Math.pow(a, b));
+		default -> throw new IllegalArgumentException("Invalid operator: " + operator + "!");
+		};
+	}
+
 }
