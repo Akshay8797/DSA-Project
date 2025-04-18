@@ -2,6 +2,7 @@ package stack;
 
 import java.util.Arrays;
 
+import utils.MsgUtils;
 import utils.StackUtils;
 
 // Implement k stacks in an array. stackNum should be from 0 to k-1.
@@ -13,7 +14,9 @@ public class KStacks {
 
 		kStack(int k, int n) {
 			if (k > n)
-				throw new IllegalArgumentException("No. of stacks cannot exceed array capacity.");
+				throw new IllegalArgumentException(MsgUtils.INVALID_STACKS);
+			if (n <= 0)
+				throw new IllegalArgumentException(MsgUtils.INVALID_CAP);
 			this.k = k;
 			cap = n;
 			arr = new int[cap]; // Store stack elements.

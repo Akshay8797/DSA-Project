@@ -1,6 +1,7 @@
 package queue.core;
 
 import linkedList.core.Node;
+import utils.MsgUtils;
 
 public class LinkedListQueue {
 
@@ -21,10 +22,8 @@ public class LinkedListQueue {
 		}
 
 		void deque() {
-			if (front == null) {
-				System.err.println("Deque failed: Queue empty!");
-				return;
-			}
+			if (front == null)
+				throw new IllegalStateException(MsgUtils.QUEUE_EMPTY);
 			front = front.next;
 			size--;
 			if (front == null)

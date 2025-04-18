@@ -1,16 +1,18 @@
 package stack;
 
-import utils.StackUtils;
+import utils.MsgUtils;
 
 // Implement two stacks in an array.
 public class TwoStacks {
 
 	private static class Stack {
-		private int n, top1, top2;
+		private int cap, top1, top2;
 		private Integer[] arr;
 
 		Stack(int n) {
-			this.n = n;
+			if (n <= 0)
+				throw new IllegalArgumentException(MsgUtils.INVALID_CAP);
+			this.cap = n;
 			arr = new Integer[n];
 			top1 = -1;
 			top2 = n;
@@ -21,7 +23,7 @@ public class TwoStacks {
 				top1++;
 				arr[top1] = x;
 			} else
-				StackUtils.stackFullError(x);
+				throw new IllegalStateException(MsgUtils.STACK_FULL);
 		}
 
 		void push2(int x) {
@@ -29,43 +31,43 @@ public class TwoStacks {
 				top2--;
 				arr[top2] = x;
 			} else
-				StackUtils.stackFullError(x);
+				throw new IllegalStateException(MsgUtils.STACK_FULL);
 		}
 
-		Integer pop1() {
+		int pop1() {
 			if (top1 == -1)
-				return StackUtils.stackEmptyError("Pop");
+				throw new IllegalStateException("Pop " + MsgUtils.STACK_EMPTY);
 			int res = arr[top1];
 			top1--;
 			return res;
 		}
 
-		Integer pop2() {
-			if (top2 == n)
-				return StackUtils.stackEmptyError("Pop");
+		int pop2() {
+			if (top2 == cap)
+				throw new IllegalStateException("Pop " + MsgUtils.STACK_EMPTY);
 			int res = arr[top2];
 			top2++;
 			return res;
 		}
 
-		Integer peek1() {
+		int peek1() {
 			if (top1 == -1)
-				return StackUtils.stackEmptyError("Peek");
+				throw new IllegalStateException("Peek " + MsgUtils.STACK_EMPTY);
 			return arr[top1];
 		}
 
-		Integer peek2() {
-			if (top2 == n)
-				return StackUtils.stackEmptyError("Peek");
+		int peek2() {
+			if (top2 == cap)
+				throw new IllegalStateException("Peek " + MsgUtils.STACK_EMPTY);
 			return arr[top2];
 		}
 
-		Integer size1() {
+		Integer getSize1() {
 			return top1 + 1;
 		}
 
-		Integer size2() {
-			return n - top2;
+		Integer getSize2() {
+			return cap - top2;
 		}
 	}
 
@@ -76,13 +78,13 @@ public class TwoStacks {
 		stack.push1(25);
 		System.out.println("Pop-1: " + stack.pop1());
 		System.out.println("Peek-1: " + stack.peek1());
-		System.out.println("Size-1: " + stack.size1());
+		System.out.println("Size-1: " + stack.getSize1());
 		stack.push2(10);
 		stack.push2(20);
 		stack.push2(30);
 		System.out.println("Pop-2: " + stack.pop2());
 		System.out.println("Peek-2: " + stack.peek2());
-		System.out.println("Size-2: " + stack.size2());
+		System.out.println("Size-2: " + stack.getSize2());
 	}
 
 }

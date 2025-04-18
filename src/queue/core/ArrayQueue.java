@@ -1,31 +1,31 @@
 package queue.core;
 
+import utils.MsgUtils;
+
 public class ArrayQueue {
 
 	private static class Queue {
 		private int cap, queue[];
 		private int front = 0, size = 0;
 
-		Queue(int cap) {
-			this.cap = cap;
-			queue = new int[cap];
+		Queue(int n) {
+			if (n <= 0)
+				throw new IllegalArgumentException(MsgUtils.INVALID_CAP);
+			this.cap = n;
+			queue = new int[n];
 		}
 
 		void enque(int x) {
-			if (isFull()) {
-				System.err.println("Enqueue failed: Queue full!");
-				return;
-			}
+			if (isFull())
+				throw new IllegalStateException(MsgUtils.QUEUE_FULL);
 			int rear = (getRearIndex() + 1) % cap;
 			queue[rear] = x;
 			size++;
 		}
 
 		void deque() {
-			if (isEmpty()) {
-				System.err.println("Deque failed: Queue empty!");
-				return;
-			}
+			if (isEmpty())
+				throw new IllegalStateException(MsgUtils.QUEUE_EMPTY);
 			front = (front + 1) % cap;
 			size--;
 		}

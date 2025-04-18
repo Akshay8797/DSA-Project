@@ -3,7 +3,7 @@ package stack.core;
 import java.util.ArrayList;
 import java.util.List;
 
-import utils.StackUtils;
+import utils.MsgUtils;
 
 public class ListStack {
 
@@ -14,21 +14,21 @@ public class ListStack {
 			list.add(x);
 		}
 
-		Integer pop() {
+		int pop() {
 			if (list.size() == 0)
-				return StackUtils.stackEmptyError("Pop");
+				throw new IllegalStateException("Pop " + MsgUtils.STACK_EMPTY);
 			int res = list.get(list.size() - 1);
 			list.remove(list.size() - 1);
 			return res;
 		}
 
-		Integer peek() {
+		int peek() {
 			if (list.size() == 0)
-				return StackUtils.stackEmptyError("Peek");
+				throw new IllegalStateException("Peek " + MsgUtils.STACK_EMPTY);
 			return list.get(list.size() - 1);
 		}
 
-		Integer size() {
+		int size() {
 			return list.size();
 		}
 

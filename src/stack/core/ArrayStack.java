@@ -1,6 +1,6 @@
 package stack.core;
 
-import utils.StackUtils;
+import utils.MsgUtils;
 
 public class ArrayStack {
 
@@ -8,31 +8,31 @@ public class ArrayStack {
 		private int cap, top = -1;
 		private Integer[] arr;
 
-		Stack(int cap) {
-			this.cap = cap;
-			arr = new Integer[cap];
+		Stack(int n) {
+			if (n <= 0)
+				throw new IllegalArgumentException(MsgUtils.INVALID_CAP);
+			cap = n;
+			arr = new Integer[n];
 		}
 
 		void push(int x) {
-			if (top == cap - 1) {
-				StackUtils.stackFullError(x);
-				return;
-			}
+			if (top == cap - 1)
+				throw new IllegalStateException(MsgUtils.STACK_FULL);
 			top++;
 			arr[top] = x;
 		}
 
-		Integer pop() {
+		int pop() {
 			if (top == -1)
-				return StackUtils.stackEmptyError("Pop");
+				throw new IllegalStateException("Pop " + MsgUtils.STACK_EMPTY);
 			int res = arr[top];
 			top--;
 			return res;
 		}
 
-		Integer peek() {
+		int peek() {
 			if (top == -1)
-				return StackUtils.stackEmptyError("Peek");
+				throw new IllegalStateException("Peek " + MsgUtils.STACK_EMPTY);
 			return arr[top];
 		}
 

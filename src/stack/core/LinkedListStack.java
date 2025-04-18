@@ -1,7 +1,7 @@
 package stack.core;
 
 import linkedList.core.Node;
-import utils.StackUtils;
+import utils.MsgUtils;
 
 public class LinkedListStack {
 
@@ -17,22 +17,22 @@ public class LinkedListStack {
 			size++;
 		}
 
-		Integer pop() {
+		int pop() {
 			if (head == null)
-				return StackUtils.stackEmptyError("Pop");
+				throw new IllegalStateException("Pop " + MsgUtils.STACK_EMPTY);
 			int res = head.data;
 			head = head.next;
 			size--;
 			return res;
 		}
 
-		Integer peek() {
+		int peek() {
 			if (head == null)
-				return StackUtils.stackEmptyError("Peek");
+				throw new IllegalStateException("Peek " + MsgUtils.STACK_EMPTY);
 			return head.data;
 		}
 
-		Integer size() {
+		int size() {
 			return size;
 		}
 
