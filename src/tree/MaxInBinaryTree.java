@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 import tree.core.TreeNode;
-import utils.TreeUtils;
+import utils.tree.TreeUtils;
 
 // Find the maximum value node in a Binary tree.
 public class MaxInBinaryTree {
