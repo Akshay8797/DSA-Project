@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 import tree.core.TreeNode;
-import utils.TreeUtils;
+import utils.tree.TreeUtils;
 
 // Given a binary tree, Print its left view - Leftmost node at each level. 
 public class LeftView {
