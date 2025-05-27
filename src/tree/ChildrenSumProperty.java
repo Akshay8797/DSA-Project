@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 import tree.core.TreeNode;
-import utils.TreeUtils;
+import utils.tree.TreeUtils;
 
 /*- Given a binary tree, check if it follows Children sum property.
  * 	Children sum property - Sum of the child nodes should be equal to their parent node.
