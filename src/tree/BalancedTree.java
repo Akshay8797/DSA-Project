@@ -2,7 +2,7 @@ package tree;
 
 import tree.core.TreeHeight;
 import tree.core.TreeNode;
-import utils.TreeUtils;
+import utils.tree.TreeUtils;
 
 /*- Given a binary tree, check if it is height balanced for each node.
  * 	Height balanced - Difference b/w heights of left and right subtrees should not be more than 1.
