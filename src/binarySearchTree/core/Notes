@@ -1,0 +1,8 @@
+  Operation			BST (Balanced)		Hash Table
+
+   Search		   	   O(log n)			   O(1)
+   Insert		   	   O(log n)			   O(1)
+   Delete		   	   O(log n)			   O(1)
+Find closest	   	   O(log n)			   O(1)
+Sorted traversal     	 O(n)		   O(n * log n)
+
