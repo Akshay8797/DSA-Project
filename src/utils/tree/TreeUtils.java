@@ -125,4 +125,16 @@ public class TreeUtils {
 		return createBinaryTree(10, 20, 30, 40, 50);
 	}
 	
+	/*-		 15
+	 *      /  \
+	 *     5   20
+	 *    /    / \
+	 *   3	  18  80
+	 *   	 /
+	 *   	16
+	 */
+	public static TreeNode createBST1() {
+		return createBinaryTree(15, 5, 20, 3, null, 18, 80, null, null, 16);
+	}
+	
 }
