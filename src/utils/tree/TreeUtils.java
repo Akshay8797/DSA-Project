@@ -104,7 +104,7 @@ public class TreeUtils {
 	public static TreeNode createTree6() {
 		return createBinaryTree(10, 20, 30, null, null, 40, 50, 60, null, 70, 80);
 	}
-	
+
 	/*-		 10
 	 *      /  \
 	 *     20  30
@@ -124,7 +124,7 @@ public class TreeUtils {
 	public static TreeNode createTree8() {
 		return createBinaryTree(10, 20, 30, 40, 50);
 	}
-	
+
 	/*-		 15
 	 *      /  \
 	 *     5   20
@@ -136,5 +136,17 @@ public class TreeUtils {
 	public static TreeNode createBST1() {
 		return createBinaryTree(15, 5, 20, 3, null, 18, 80, null, null, 16);
 	}
-	
+
+	/*-		 50
+	 *      /  \
+	 *    30    70
+	 *   /  \   / \
+	 *  20  40 60  80
+	 *   	  /  \
+	 *   	 55  65
+	 */
+	public static TreeNode createBST2() {
+		return createBinaryTree(50, 30, 70, 20, 40, 60, 80, null, null, null, null, 55, 65);
+	}
+
 }
