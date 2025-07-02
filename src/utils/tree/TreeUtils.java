@@ -149,4 +149,14 @@ public class TreeUtils {
 		return createBinaryTree(50, 30, 70, 20, 40, 60, 80, null, null, null, null, 55, 65);
 	}
 
+	/*-		 20
+	 *      /  \
+	 *     8   30
+	 *    	  /  \ 
+	 *   	 18  35
+	 */
+	public static TreeNode createTree9() {
+		return createBinaryTree(20, 8, 30, null, null, 18, 35);
+	}
+
 }
