@@ -31,4 +31,19 @@ public class BstResult {
 
 	}
 
+	public static class VDistTreeNode {
+		public TreeNode node;
+		public int vDistance;
+
+		public VDistTreeNode(TreeNode node, int vDistance) {
+			this.node = node;
+			this.vDistance = vDistance;
+		}
+
+		@Override
+		public String toString() {
+			return node.toString();
+		}
+	}
+
 }
