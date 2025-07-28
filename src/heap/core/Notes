@@ -1,0 +1,15 @@
+=> A Binary Heap is a complete Binary Tree (All levels are filled, 
+	except possibly the last level which is filled from left to right without any gaps in between).
+	
+=> Binary Heap is stored as an array. Left(i) = 2i+1, Right(i) = 2i+2, and Parent(i) = |(i-1)/2|.
+	This way random access is possible and it is cache friendly.
+
+=> Binary Heap is used in:
+- Heap Sort
+- Priority Queue : Useful in Dijkstra's shortest path, Prim's minimum spanning tree, Huffman coding etc.
+
+=> 2 Types of Binary Heap:
+- Min Heap: The parent is less than or equal to its children.
+	Used to implement min-priority queue where lowest value = highest priority.
+- Max Heap: The parent is greater than or equal to its children.
+	Used to implement max-priority queue where highest value = highest priority.
