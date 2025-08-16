@@ -4,11 +4,7 @@ import java.util.Arrays;
 
 import utils.ArrayUtils;
 
-public class MinHeapInsert extends MinHeap {
-
-	public MinHeapInsert(int cap) {
-		super(cap);
-	}
+public class MinHeapInsert extends Heap {
 
 	public MinHeapInsert(int[] heap, int cap) {
 		super(heap, cap);
