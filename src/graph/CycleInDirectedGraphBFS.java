@@ -12,7 +12,7 @@ public class CycleInDirectedGraphBFS {
 	public static void main(String[] args) {
 		int[][] edges = { { 1 }, {}, { 1, 3 }, { 4 }, { 2 } };
 		int vrtx = 5;
-		List<List<Integer>> adj = GraphUtils.crateAdjList(vrtx, edges);
+		List<List<Integer>> adj = GraphUtils.buildGraph(vrtx, edges);
 		System.out.println(hasDirectedCycleBFS(adj, vrtx));
 	}
 

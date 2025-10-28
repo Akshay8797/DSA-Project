@@ -12,7 +12,7 @@ public class ShortestPathUnweightedGraph {
 	public static void main(String[] args) {
 		int[][] edges = { { 1, 2 }, { 0, 2, 3 }, { 0, 1, 3 }, { 1, 2 } };
 		int vrtx = 4;
-		List<List<Integer>> adj = GraphUtils.crateAdjList(vrtx, edges);
+		List<List<Integer>> adj = GraphUtils.buildGraph(vrtx, edges);
 		printShortestPathsFromSource(adj, 0);
 	}
 

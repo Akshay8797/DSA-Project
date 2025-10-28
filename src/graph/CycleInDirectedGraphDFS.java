@@ -9,7 +9,7 @@ public class CycleInDirectedGraphDFS {
 	public static void main(String[] args) {
 		int[][] edges = { { 1 }, {}, { 1, 3 }, { 4 }, { 2 } };
 		int vrtx = 5;
-		List<List<Integer>> adj = GraphUtils.crateAdjList(vrtx, edges);
+		List<List<Integer>> adj = GraphUtils.buildGraph(vrtx, edges);
 		boolean hasCycle = false, visited[] = new boolean[vrtx], recStk[] = new boolean[vrtx];
 		for (int i = 0; i < vrtx; i++) {
 			if (!visited[i]) {

@@ -10,7 +10,7 @@ public class ToplogicalSortingDFS {
 	public static void main(String[] args) {
 		int[][] edges = { { 2, 3 }, { 3, 4 }, { 3 }, {}, {} };
 		int vrtx = 5;
-		List<List<Integer>> adj = GraphUtils.crateAdjList(vrtx, edges);
+		List<List<Integer>> adj = GraphUtils.buildGraph(vrtx, edges);
 		printTopoOrderDFS(adj, vrtx);
 	}
 
@@ -24,7 +24,6 @@ public class ToplogicalSortingDFS {
 		// Print topological order (from stack)
 		while (!stack.isEmpty())
 			System.out.print(stack.pop() + " ");
-
 	}
 
 	private static void doDFS(List<List<Integer>> adj, int u, Deque<Integer> stack, boolean[] visited) {

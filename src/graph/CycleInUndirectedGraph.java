@@ -11,7 +11,7 @@ public class CycleInUndirectedGraph {
 	public static void main(String[] args) {
 		int[][] edges = { { 1, 2 }, { 0 }, { 0, 3, 4 }, { 2, 4 }, { 2, 3 } };
 		int vrtx = 5;
-		List<List<Integer>> adj = GraphUtils.crateAdjList(vrtx, edges);
+		List<List<Integer>> adj = GraphUtils.buildGraph(vrtx, edges);
 		boolean hasCycle = false, visited[] = new boolean[vrtx];
 		for (int i = 0; i < vrtx; i++) {
 			if (!visited[i]) {

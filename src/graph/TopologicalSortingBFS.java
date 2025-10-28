@@ -18,12 +18,12 @@ public class TopologicalSortingBFS {
 	public static void main(String[] args) {
 		int[][] edges = { { 2, 3 }, { 3, 4 }, { 3 }, {}, {} };
 		int vrtx = 5;
-		List<List<Integer>> adj = GraphUtils.crateAdjList(vrtx, edges);
-		System.out.println(printTopologicalOrder(adj, vrtx));
+		List<List<Integer>> adj = GraphUtils.buildGraph(vrtx, edges);
+		System.out.println(TopoOrderBFS(adj, vrtx));
 	}
 
 	// T(n): O(V + E).
-	private static List<Integer> printTopologicalOrder(List<List<Integer>> adj, int vertexCount) {
+	private static List<Integer> TopoOrderBFS(List<List<Integer>> adj, int vertexCount) {
 		int[] inDegree = new int[vertexCount];
 		// Calculate in degree of each vertex.
 		for (List<Integer> row : adj) {
