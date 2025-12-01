@@ -11,10 +11,9 @@ public class PrimsMst {
 		int[][] graph = { { 0, 2, 0, 6, 0 }, { 2, 0, 3, 8, 5 }, { 0, 3, 0, 0, 7 }, { 6, 8, 0, 0, 0 },
 				{ 0, 5, 7, 0, 0 } };
 		System.out.println("Weight of the MST: " + getMstWeight(graph));
-
 	}
 
-	// T(n): O(V²), S(n): O(V²),
+	// T(n): O(V²), S(n): O(V²).
 	private static int getMstWeight(int[][] graph) {
 		int n = graph.length, totalWeight = 0, key[] = new int[n];
 		Arrays.fill(key, Integer.MAX_VALUE);
