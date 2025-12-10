@@ -7,21 +7,24 @@ public class GraphUtils {
 
 	/*- Builds the adjacency list representation of a graph.
 	 * 	@param v: the number of vertices in the graph.
-	 * 	@param edges: 2D array where each row contains the neighbors of a vertex.
+	 * 	@param edges: 2D array where each row contains the neighbors of that vertex (index).
 	 * 		Row i in edges represents the list of neighbors for vertex i.
 	 * 	@return the adjacency list of the graph where adj.get(i) is the list of neighbors of vertex i.
 	 */
-	public static List<List<Integer>> buildGraph(int v, int[][] edges) {
-		List<List<Integer>> adj = new ArrayList<>(v);
-		if (edges.length > v)
+	public static List<List<Integer>> buildGraph(int numVertices, int[][] neighborsPerVertex) {
+		List<List<Integer>> adjadjList = new ArrayList<>(numVertices);
+		if (neighborsPerVertex.length > numVertices)
 			throw new IllegalArgumentException("Size of adj list cannot exceed no. of vertices");
-		for (int[] row : edges) {
+		for (int[] neighbors : neighborsPerVertex) {
 			List<Integer> edgeRow = new ArrayList<>();
-			for (int nbr : row)
-				edgeRow.add(nbr);
-			adj.add(edgeRow);
+			for (int neighbor : neighbors) {
+				if (neighbor < 0 || neighbor >= numVertices)
+					throw new IllegalArgumentException("Neighbor index out of bounds!");
+				edgeRow.add(neighbor);
+			}
+			adjadjList.add(edgeRow);
 		}
-		return adj;
+		return adjadjList;
 	}
 
 	public static void printGraph(List<List<Integer>> adj) {
@@ -37,29 +40,34 @@ public class GraphUtils {
 		}
 	}
 
-	public record Edge(int to, int weight) {
-	}
+	// Weighted edge.
+	public record Edge(int to, int weight) implements Comparable<Edge> {
+		@Override
+		public int compareTo(Edge v) {
+			return Integer.compare(this.weight, v.weight);
+		}
+	};
 
 	/*- Builds the adjacency list representation of a directed, weighted graph.
-	 * 	@param v: the number of vertices in the graph.
-	 * 	@param edges: list of int arrays, where each array represents an edge as {from, to, weight}.
+	 * 	@param numVertices: the number of vertices in the graph.
+	 * 	@param edgesPerVertex: 2D array where each row contains the neighbors of that vertex (index).
+	 * 		Row i in edges represents the list of neighbors for vertex i.
 	 * 	@return the adjacency list of the graph.
 	 */
-	public static List<List<Edge>> buildWeightedGraph(int v, List<int[]> edges) {
-		List<List<Edge>> graph = new ArrayList<>();
-		for (int i = 0; i < v; i++)
-			graph.add(new ArrayList<>());
-		for (int[] edge : edges) {
-			if (edge.length != 3)
-				throw new IllegalArgumentException("An edge must have from, to and weight!");
-			int from = edge[0];
-			int to = edge[1];
-			int weight = edge[2];
-			if (from < 0 || from >= v || to < 0 || to >= v)
-				throw new IllegalArgumentException("Vertex index out of bounds!");
-			graph.get(from).add(new Edge(to, weight));
+	public static List<List<Edge>> buildWeightedGraph(int numVertices, Edge[][] edgesPerVertex) {
+		List<List<Edge>> adjList = new ArrayList<>();
+		if (edgesPerVertex.length > numVertices)
+			throw new IllegalArgumentException("Size of adj list cannot exceed no. of vertices");
+		for (Edge[] adjacentEdges : edgesPerVertex) {
+			List<Edge> edgeList = new ArrayList<>();
+			for (Edge edge : adjacentEdges) {
+				if (edge.to() < 0 || edge.to() >= numVertices)
+					throw new IllegalArgumentException("Vertex index out of bounds!");
+				edgeList.add(edge);
+			}
+			adjList.add(edgeList);
 		}
-		return graph;
+		return adjList;
 	}
 
 	public static void printWeightedGraph(List<List<Edge>> graph) {
