@@ -14,12 +14,11 @@ import utils.GraphUtils.Edge;
 public class ShortestPathInDAG {
 
 	public static void main(String[] args) {
-		List<int[]> edges = List.of(new int[] { 0, 1, 1 }, new int[] { 1, 2, 3 }, new int[] { 1, 3, 2 },
-				new int[] { 2, 3, 4 });
-		List<List<Edge>> adj = GraphUtils.buildWeightedGraph(4, edges);
-		GraphUtils.printWeightedGraph(adj);
+		Edge[][] edgesPerVertex = { { new Edge(1, 1) }, { new Edge(2, 3), new Edge(3, 2) }, { new Edge(3, 4) }, {} };
+		List<List<Edge>> graph = GraphUtils.buildWeightedGraph(4, edgesPerVertex);
+		GraphUtils.printWeightedGraph(graph);
 		System.out.println();
-		shortestPathFromSrc(adj, 4, 1);
+		shortestPathFromSrc(graph, 4, 1);
 	}
 
 	private static void shortestPathFromSrc(List<List<Edge>> adj, int vertices, int src) {

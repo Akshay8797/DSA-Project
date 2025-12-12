@@ -52,15 +52,15 @@ public class KosarajuAlgorithm {
 	}
 
 	private static List<List<Integer>> getTranspose(List<List<Integer>> graph, int n) {
-		List<List<Integer>> grph = new ArrayList<>(n);
+		List<List<Integer>> transposeGraph = new ArrayList<>(n);
 		for (int i = 0; i < n; i++)
-			grph.add(new ArrayList<>());
+			transposeGraph.add(new ArrayList<>());
 		// Reverse the direction of all edges.
 		for (int u = 0; u < n; u++) {
 			for (int v : graph.get(u))
-				grph.get(v).add(u);
+				transposeGraph.get(v).add(u);
 		}
-		return grph;
+		return transposeGraph;
 	}
 
 	private static void doDFS(List<List<Integer>> graph, int u, Deque<Integer> stack, boolean[] visited) {
