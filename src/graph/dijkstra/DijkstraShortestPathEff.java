@@ -1,9 +1,11 @@
 package graph.dijkstra;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
+
+import utils.GraphUtils;
+import utils.GraphUtils.Edge;
 
 /*- Given an adjacency matrix representing an undirected, connected, weighted graph and a source vertex
  * 	Print the shortest distances of all the vertices from the source.
@@ -11,11 +13,10 @@ import java.util.PriorityQueue;
 public class DijkstraShortestPathEff {
 
 	public static void main(String[] args) {
-		List<List<Edge>> graph = new ArrayList<>();
-		graph.add(List.of(new Edge(1, 5), new Edge(2, 10)));
-		graph.add(List.of(new Edge(0, 5), new Edge(2, 3), new Edge(3, 20)));
-		graph.add(List.of(new Edge(0, 10), new Edge(1, 3), new Edge(3, 2)));
-		graph.add(List.of(new Edge(1, 20), new Edge(2, 2)));
+		Edge[][] edgesPerVertex = { { new Edge(1, 5), new Edge(2, 10) },
+				{ new Edge(0, 5), new Edge(2, 3), new Edge(3, 20) },
+				{ new Edge(0, 19), new Edge(1, 3), new Edge(3, 2) }, { new Edge(1, 20), new Edge(2, 2) } };
+		List<List<Edge>> graph = GraphUtils.buildWeightedGraph(4, edgesPerVertex);
 		int src = 0;
 		int[] distances = getShortestPaths(graph, src);
 		System.out.println("Shortest distances from " + src + ": " + Arrays.toString(distances));
@@ -59,9 +60,6 @@ public class DijkstraShortestPathEff {
 		}
 		return dist;
 	}
-
-	record Edge(int to, int weight) {
-	};
 
 	record NodeEntry(int node, int distance) implements Comparable<NodeEntry> {
 		@Override
